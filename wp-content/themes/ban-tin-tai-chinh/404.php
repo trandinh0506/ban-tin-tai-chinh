@@ -1,0 +1,1 @@
+<?php get_header(); ?><main class="site-main"><div class="empty-state"><p class="eyebrow">404</p><h1>Không tìm thấy nội dung</h1><p>Liên kết này có thể đã thay đổi hoặc không còn tồn tại.</p><a class="button-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">Về trang chủ</a></div></main><?php get_footer(); ?>

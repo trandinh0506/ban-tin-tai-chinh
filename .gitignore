@@ -1,0 +1,9 @@
+.env
+.publish-state/
+*.log
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-*/
+.DS_Store
+Thumbs.db

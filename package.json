@@ -1,0 +1,12 @@
+{
+  "name": "ban-tin-tai-chinh-publisher",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "publish": "node scripts/publish.mjs",
+    "test": "node --test tests/publisher.test.mjs"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}

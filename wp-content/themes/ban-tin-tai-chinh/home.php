@@ -1,0 +1,14 @@
+<?php get_header(); ?><main class="site-main homepage">
+	<header class="hero-intro"><p class="eyebrow">Bản tin tài chính</p><h1>Góc nhìn rõ ràng<br>cho quyết định dài hạn</h1><p>Phân tích kinh tế, thị trường và kiến thức tài chính bằng ngôn ngữ dễ hiểu, thận trọng và có hệ thống.</p></header>
+	<?php
+	$featured = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'post_status' => 'publish' ) );
+	if ( $featured->have_posts() ) : $featured->the_post();
+	?>
+	<section class="featured-story"><div class="featured-media"><a href="<?php the_permalink(); ?>"><?php ban_tin_tai_chinh_post_image( 'large' ); ?></a></div><div class="featured-copy"><div class="eyebrow"><?php the_category( ' · ' ); ?></div><h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2><p class="post-meta">Đăng ngày <?php echo esc_html( get_the_date( 'j/n/Y' ) ); ?> · Tác giả: <?php echo esc_html( get_the_author() ); ?></p><p><?php echo esc_html( get_the_excerpt() ); ?></p><a class="text-link" href="<?php the_permalink(); ?>">Đọc bài phân tích <span aria-hidden="true">→</span></a></div></section>
+	<?php endif; wp_reset_postdata(); ?>
+	<section class="section-block"><div class="section-heading"><h2>Bài viết mới</h2><a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ?: home_url( '/' ) ); ?>">Xem tất cả <span aria-hidden="true">→</span></a></div><div class="post-grid">
+	<?php $latest = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'post_status' => 'publish', 'offset' => 1 ) ); if ( $latest->have_posts() ) : while ( $latest->have_posts() ) : $latest->the_post(); get_template_part( 'template-parts/post', 'card' ); endwhile; else : ?><p>Chưa có bài viết mới.</p><?php endif; wp_reset_postdata(); ?></div></section>
+	<section class="category-sections"><h2 class="section-title">Khám phá theo chủ đề</h2>
+	<?php foreach ( array( 'vi-mo', 'chung-khoan', 'kien-thuc-tai-chinh' ) as $category_slug ) : $category = get_category_by_slug( $category_slug ); if ( ! $category ) continue; $category_posts = new WP_Query( array( 'cat' => $category->term_id, 'posts_per_page' => 2, 'post_status' => 'publish' ) ); ?>
+	<div class="category-section"><div class="section-heading"><h3><a href="<?php echo esc_url( get_category_link( $category ) ); ?>"><?php echo esc_html( $category->name ); ?></a></h3><a href="<?php echo esc_url( get_category_link( $category ) ); ?>">Xem chuyên mục <span aria-hidden="true">→</span></a></div><div class="post-grid post-grid-compact"><?php while ( $category_posts->have_posts() ) : $category_posts->the_post(); get_template_part( 'template-parts/post', 'card' ); endwhile; ?></div></div><?php wp_reset_postdata(); endforeach; ?></section>
+</main><?php get_footer(); ?>
