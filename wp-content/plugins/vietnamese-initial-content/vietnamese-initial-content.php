@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Nội dung khởi tạo tiếng Việt
+ * Plugin Name: Khởi tạo nội dung tài chính
  * Description: Tạo các chuyên mục và bài viết giáo dục tài chính ban đầu theo cách idempotent.
  * Version: 1.0.0
  * Requires at least: 6.0
@@ -289,6 +289,7 @@ HTML,
 <h2>Đóng góp đều đặn và tái cân bằng</h2>
 <p>Đóng góp đều đặn có thể giúp giảm phụ thuộc vào một thời điểm mua duy nhất, nhưng không bảo đảm mua được giá thấp. Khi danh mục thay đổi tỷ trọng vì giá tài sản biến động, tái cân bằng có thể đưa rủi ro về gần kế hoạch ban đầu. Việc tái cân bằng cần cân nhắc thuế, phí và điều kiện thị trường, không nên thực hiện máy móc.</p>
 <p>Trước khi dùng một giả định lãi kép, hãy viết rõ vốn ban đầu, khoản đóng góp, thời hạn, mức phí, lạm phát và kịch bản lợi nhuận. So sánh nhiều kịch bản thận trọng, cơ sở và bất lợi sẽ phản ánh sự không chắc chắn tốt hơn một đường tăng đều.</p>
+<p>Thời gian đầu tư cũng cần được chia thành thời gian còn lại và thời gian có thể chịu đựng biến động. Một kế hoạch dài trên giấy nhưng phải rút tiền sớm sẽ không hưởng trọn lợi ích của lãi kép. Quỹ dự phòng và việc tách tiền theo mục tiêu giúp giảm khả năng bán tài sản rủi ro vào thời điểm bất lợi.</p>
 <p>Lãi kép là nguyên tắc hữu ích để hiểu giá trị của tiết kiệm đều đặn và thời gian, không phải lời hứa về lợi nhuận. Đây là nội dung giáo dục, không phải tư vấn tài chính cá nhân.</p>
 HTML,
 		),
@@ -314,6 +315,7 @@ HTML,
 <h2>Đọc điều khoản trước khi mua</h2>
 <p>Với trái phiếu, cần xem tổ chức phát hành, tài sản bảo đảm, kỳ hạn, lãi suất, lịch trả, điều khoản mua lại và các cam kết liên quan. Với cổ phiếu, cần xem quyền biểu quyết, chính sách cổ tức, cơ cấu sở hữu và khả năng pha loãng. Tên gọi “thu nhập cố định” cũng không đồng nghĩa với không có rủi ro.</p>
 <p>Giá thị trường của cả hai tài sản có thể khác xa giá trị ghi trên hợp đồng hoặc giá trị sổ sách. Một quyết định cân bằng cần xem cả chất lượng dòng tiền, giá mua, thanh khoản và khả năng nắm giữ qua giai đoạn biến động.</p>
+<p>Cũng cần phân biệt trái phiếu doanh nghiệp, trái phiếu chính phủ và các sản phẩm có cấu trúc khác nhau; mức độ bảo đảm, quy trình công bố và rủi ro tín dụng không giống nhau. Với cổ phiếu, quyền sở hữu không bảo đảm cổ tức hay giá tăng. Đọc bản công bố và tài liệu chính thức giúp tránh suy luận từ tên sản phẩm.</p>
 <h2>Kết luận</h2>
 <p>Cổ phiếu trao quyền sở hữu và cơ hội hưởng thành quả kinh doanh; trái phiếu trao quyền nhận dòng tiền theo hợp đồng và có thứ tự ưu tiên khác. Trước khi mua, cần đọc điều khoản phát hành, chất lượng tổ chức phát hành, định giá, thanh khoản và rủi ro. Bài viết chỉ mang tính giáo dục, không phải lời khuyên đầu tư.</p>
 HTML,
@@ -419,7 +421,7 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 			function () {
 				vn_finance_initial_content_seed();
 				vn_finance_initial_content_configure_urls();
-				WP_CLI::success( 'Đã kiểm tra nội dung khởi tạo tiếng Việt; dữ liệu tồn tại được giữ nguyên.' );
+				WP_CLI::success( 'Đã kiểm tra nội dung khởi tạo tài chính; dữ liệu tồn tại được giữ nguyên.' );
 			}
 		);
 }

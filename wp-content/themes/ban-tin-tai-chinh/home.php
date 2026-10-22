@@ -1,4 +1,4 @@
-<?php get_header(); ?><main class="site-main homepage">
+<?php get_header(); ?><main class="site-main homepage"><div class="content-with-sidebar"><div class="main-column">
 	<header class="hero-intro"><p class="eyebrow">Bản tin tài chính</p><h1>Góc nhìn rõ ràng<br>cho quyết định dài hạn</h1><p>Phân tích kinh tế, thị trường và kiến thức tài chính bằng ngôn ngữ dễ hiểu, thận trọng và có hệ thống.</p></header>
 	<?php
 	$featured = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'post_status' => 'publish' ) );
@@ -11,4 +11,4 @@
 	<section class="category-sections"><h2 class="section-title">Khám phá theo chủ đề</h2>
 	<?php foreach ( array( 'vi-mo', 'chung-khoan', 'kien-thuc-tai-chinh' ) as $category_slug ) : $category = get_category_by_slug( $category_slug ); if ( ! $category ) continue; $category_posts = new WP_Query( array( 'cat' => $category->term_id, 'posts_per_page' => 2, 'post_status' => 'publish' ) ); ?>
 	<div class="category-section"><div class="section-heading"><h3><a href="<?php echo esc_url( get_category_link( $category ) ); ?>"><?php echo esc_html( $category->name ); ?></a></h3><a href="<?php echo esc_url( get_category_link( $category ) ); ?>">Xem chuyên mục <span aria-hidden="true">→</span></a></div><div class="post-grid post-grid-compact"><?php while ( $category_posts->have_posts() ) : $category_posts->the_post(); get_template_part( 'template-parts/post', 'card' ); endwhile; ?></div></div><?php wp_reset_postdata(); endforeach; ?></section>
-</main><?php get_footer(); ?>
+</div><?php get_sidebar(); ?></div></main><?php get_footer(); ?>

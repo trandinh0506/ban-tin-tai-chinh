@@ -9,7 +9,7 @@ function samplePost(overrides = {}) {
     status: 'publish',
     date: '2026-01-02T03:04:05',
     title: { rendered: 'Vì sao lãi suất?' },
-    content: { rendered: '<p>Nội dung tiếng Việt</p>' },
+    content: { rendered: '<p>Nội dung bài viết</p>' },
     excerpt: { rendered: '<p>Tóm tắt</p>' },
     _embedded: {
       'wp:term': [[{ id: 4, name: 'Vĩ mô', slug: 'vi-mo', taxonomy: 'category' }], []],
@@ -35,11 +35,11 @@ test('REST client sends authenticated Unicode JSON to the mocked API', async () 
       return new Response(JSON.stringify({ id: 101 }), { status: 201, headers: { 'content-type': 'application/json' } });
     },
   });
-  const result = await api.post('posts', { title: 'Bài viết tiếng Việt' });
+  const result = await api.post('posts', { title: 'Bài viết mẫu' });
   assert.equal(result.id, 101);
   assert.match(request.url, /production\.test\/wp-json\/wp\/v2\/posts$/);
   assert.equal(request.options.headers.Authorization, buildBasicAuth('publisher-bot', 'app password'));
-  assert.equal(JSON.parse(request.options.body).title, 'Bài viết tiếng Việt');
+  assert.equal(JSON.parse(request.options.body).title, 'Bài viết mẫu');
 });
 
 test('dry-run never creates, updates, or uploads', async () => {

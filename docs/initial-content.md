@@ -1,6 +1,6 @@
-# Khởi tạo nội dung tiếng Việt
+# Khởi tạo nội dung tài chính
 
-Plugin `vn-finance-initial-content` tạo ba chuyên mục và ba bài viết xuất bản đầu tiên bằng WordPress APIs.
+Plugin `vn-finance-initial-content` tạo ba chuyên mục và mười hai bài viết xuất bản ban đầu bằng WordPress APIs: ba bài gốc và chín bài mở rộng.
 
 ## Cách chạy
 

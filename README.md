@@ -1,6 +1,6 @@
 # Bản tin Tài chính
 
-Website WordPress tiếng Việt cho một ấn phẩm phân tích kinh tế và tài chính. Project dùng theme classic PHP tùy biến, plugin khởi tạo nội dung idempotent và Docker Compose với WordPress/PHP 8.3, Apache và MySQL 8.4.
+Website WordPress cho một ấn phẩm phân tích kinh tế và tài chính. Project dùng theme classic PHP tùy biến, plugin khởi tạo nội dung idempotent và Docker Compose với WordPress/PHP 8.3, Apache và MySQL 8.4.
 
 ## Chạy local
 
@@ -15,7 +15,7 @@ docker compose up -d
 Mở `http://localhost:8080` (hoặc cổng trong `WORDPRESS_PORT`) và hoàn tất màn hình cài đặt WordPress. Trong Admin:
 
 1. Vào **Giao diện → Giao diện**, kích hoạt **Bản tin Tài chính**.
-2. Vào **Plugin**, kích hoạt **Nội dung khởi tạo tiếng Việt**. Plugin sẽ tạo đúng ba chuyên mục và ba bài viết nếu chúng chưa tồn tại.
+2. Vào **Plugin**, kích hoạt **Khởi tạo nội dung tài chính**. Plugin sẽ tạo ba chuyên mục và đủ mười hai bài viết nếu chúng chưa tồn tại.
 3. Nếu cần chạy lại việc kiểm tra seed, dùng `wp vn-finance seed` trong môi trường có WP-CLI. Quy trình chi tiết nằm ở `docs/initial-content.md`.
 
 Plugin cũng cấu hình permalink native thành `/%category%/%postname%/`, nên bài viết dùng dạng `/vi-mo/vi-sao-lai-suat-anh-huong-thi-truong-chung-khoan/` và chuyên mục dùng `/vi-mo/`. Sau khi nâng cấp từ bản cũ, mở một lần trang quản trị hoặc chạy `wp vn-finance seed` để refresh rewrite rules. Không tạo page trùng slug với ba chuyên mục.
